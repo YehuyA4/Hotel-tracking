@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hızlı Otel, Google Tag Manager eğitimi için hazırlanmış kurgusal bir rezervasyon demosudur.">
+  <title>Hızlı Otel | Rezervasyon Demosu</title>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+  var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
+  j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PJKH5T53');</script>
+  <!-- End Google Tag Manager -->
+  <link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJKH5T53" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div class="demo-banner" role="note">EĞİTİM DEMOSU · Kurgusal otel · Gerçek rezervasyon veya ödeme yapılmaz</div>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">✦</span> Hızlı Otel <span class="brand-label">TRACKING LAB</span></div>
+      <div class="hero-copy">
+        <p class="eyebrow">Konaklama yolculuğunu keşfet</p>
+        <h1>Bir sonraki durak:<br>Hızlı Otel.</h1>
+        <p>Oda ara, seçenekleri incele ve örnek bir rezervasyon akışını tamamla. Bu sayfa ölçümleme öğrenmek için hazırlanmıştır.</p>
+      </div>
+      <div class="hero-art" aria-hidden="true"><span>✳</span><span>◌</span><span>✦</span></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="search-box" aria-labelledby="search-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / ARA</p><h2 id="search-title">Örnek konaklamanı planla</h2></div><span class="step-pill">Buradan başla</span></div>
+      <div class="search-fields">
+        <label>Giriş tarihi <input type="date" id="checkin"></label>
+        <label>Çıkış tarihi <input type="date" id="checkout"></label>
+        <label>Misafir sayısı <select id="guests"><option value="1">1 Misafir</option><option value="2" selected>2 Misafir</option><option value="3">3 Misafir</option><option value="4">4 Misafir</option></select></label>
+        <button id="searchButton" class="button button-primary">Uygunluğu Gör <span aria-hidden="true">→</span></button>
+      </div>
+      <p id="searchResult" class="search-result" aria-live="polite"></p>
+    </section>
+
+    <section class="rooms" aria-labelledby="rooms-title">
+      <div class="section-heading"><div><p class="eyebrow">02 / KEŞFET</p><h2 id="rooms-title">Örnek odalar</h2></div><p class="section-note">Odalar ve fiyatlar yalnızca demo içindir.</p></div>
+      <div class="room-grid">
+        <article class="room-card" data-room="Deluxe King" data-price="220">
+          <div class="room-visual room-visual-one" aria-hidden="true"><span>01</span></div>
+          <div class="room-content"><p class="room-kicker">ŞEHİR MOLASI</p><h3>Deluxe King</h3><p>King yatak · Şehir manzarası</p>
+            <div class="room-bottom"><p><strong>$220</strong> / gece</p><div class="room-actions"><button class="view-room button button-text">Odayı İncele</button><button class="book-room button button-secondary">Seç</button></div></div>
+          </div>
+        </article>
+        <article class="room-card" data-room="Skyline Suite" data-price="350">
+          <div class="room-visual room-visual-two" aria-hidden="true"><span>02</span></div>
+          <div class="room-content"><p class="room-kicker">GENİŞ ALAN</p><h3>Skyline Suite</h3><p>King yatak · Şehir silüeti</p>
+            <div class="room-bottom"><p><strong>$350</strong> / gece</p><div class="room-actions"><button class="view-room button button-text">Odayı İncele</button><button class="book-room button button-secondary">Seç</button></div></div>
+          </div>
+        </article>
+        <article class="room-card" data-room="Standard Queen" data-price="160">
+          <div class="room-visual room-visual-three" aria-hidden="true"><span>03</span></div>
+          <div class="room-content"><p class="room-kicker">SADE KONFOR</p><h3>Standard Queen</h3><p>Queen yatak · Bahçe manzarası</p>
+            <div class="room-bottom"><p><strong>$160</strong> / gece</p><div class="room-actions"><button class="view-room button button-text">Odayı İncele</button><button class="book-room button button-secondary">Seç</button></div></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="checkoutSection" class="journey-panel hidden" aria-labelledby="checkout-title">
+      <p class="eyebrow">03 / DENE</p><h2 id="checkout-title">Demo ödeme adımı</h2>
+      <p id="checkoutSummary"></p>
+      <p class="panel-note">Bu bir eğitim çalışmasıdır. Ödeme alınmaz, gerçek rezervasyon oluşturulmaz.</p>
+      <button id="purchaseButton" class="button button-primary">Rezervasyonu Simüle Et <span aria-hidden="true">→</span></button>
+    </section>
+    <section id="confirmationSection" class="journey-panel confirmation hidden" aria-labelledby="confirmation-title">
+      <p class="eyebrow">04 / TAMAMLANDI</p><h2 id="confirmation-title">Demo tamamlandı</h2>
+      <p id="confirmationText" aria-live="polite"></p>
+      <p class="panel-note">Gerçek rezervasyon yapılmadı.</p>
+    </section>
+  </main>
+  <footer>Hızlı Otel · Kurgusal bir Hotel Tracking Lab projesi</footer>
+  <script src="app.js?v=2"></script>
+</body>
+</html>
