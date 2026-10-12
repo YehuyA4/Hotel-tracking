@@ -219,6 +219,12 @@ document
         room_type:
           bookingState.roomType,
 
+        items: [{
+          item_name: bookingState.roomType,
+          price: bookingState.totalValue,
+          quantity: 1
+        }],
+
         value:
           bookingState.totalValue,
 
