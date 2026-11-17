@@ -3,64 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Hızlı Otel, Google Tag Manager eğitimi için hazırlanmış kurgusal bir rezervasyon demosudur.">
-  <title>Hızlı Otel | Rezervasyon Demosu</title>
+  <meta name="description" content="Hızlı Otel, Bozcaada ruhundan ilham alan kurgusal bir butik otel ve ölçümleme eğitimi demosudur.">
+  <title>Hızlı Otel | Ada Ritminde Bir Konaklama Demosu</title>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
   var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
   j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-PJKH5T53');</script>
   <!-- End Google Tag Manager -->
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJKH5T53" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <div class="demo-banner" role="note">EĞİTİM DEMOSU · Kurgusal otel · Gerçek rezervasyon veya ödeme yapılmaz</div>
-  <header class="hero">
+  <div class="demo-banner" role="note">EĞİTİM DEMOSU <span aria-hidden="true">·</span> Kurgusal otel <span aria-hidden="true">·</span> Gerçek rezervasyon veya ödeme yapılmaz</div>
+  <header class="hero" id="top">
     <div class="hero-inner">
-      <div class="brand"><span class="brand-mark" aria-hidden="true">✦</span> Hızlı Otel <span class="brand-label">TRACKING LAB</span></div>
+      <nav class="site-nav" aria-label="Ana menü">
+        <a class="brand" href="#top" aria-label="Hızlı Otel ana sayfa"><span class="brand-symbol" aria-hidden="true">✳</span><span>Hızlı <em>Otel</em><small>BOZCAADA'DAN İLHAMLA</small></span></a>
+        <div class="nav-links"><a href="#ada">Ada ruhu</a><a href="#odalar">Odalar</a><a class="nav-cta" href="#rezervasyon">Konaklama ara <span aria-hidden="true">↗</span></a></div>
+      </nav>
       <div class="hero-copy">
-        <p class="eyebrow">Örnek rezervasyon akışını keşfet</p>
-        <h1>Bir sonraki durak:<br>Hızlı Otel.</h1>
-        <p>Oda ara, seçenekleri incele ve örnek bir rezervasyon akışını tamamla. Bu sayfa ölçümleme öğrenmek için hazırlanmıştır.</p>
+        <p class="eyebrow hero-eyebrow">EGE'NİN SAKİN TARAFINDA · BOZCAADA</p>
+        <h1>Ada ritminde<br><em>kendine bir yer bul.</em></h1>
+        <p>Taş sokakların, üzüm bağlarının ve denizin arasında yavaşlamaya davet eden kurgusal bir butik otel deneyimi.</p>
+        <a class="hero-link" href="#rezervasyon">Konaklamanı planla <span aria-hidden="true">↗</span></a>
       </div>
-      <div class="hero-art" aria-hidden="true"><span>✳</span><span>◌</span><span>✦</span></div>
+      <div class="hero-foot"><span>DENİZ · BAĞLAR · GÜN BATIMI</span><span>01 / 03</span></div>
     </div>
   </header>
 
   <main>
-    <section class="search-box" aria-labelledby="search-title">
-      <div class="section-heading"><div><p class="eyebrow">01 / ARA</p><h2 id="search-title">Örnek konaklamanı planla</h2></div><span class="step-pill">Buradan başla</span></div>
+    <section class="search-box" id="rezervasyon" aria-labelledby="search-title">
+      <div class="section-heading"><div><p class="eyebrow">KONAKLAMANI PLANLA</p><h2 id="search-title">Ada günlerini seç.</h2></div><span class="step-pill">01 / Tarih seç</span></div>
       <div class="search-fields">
         <label>Giriş tarihi <input type="date" id="checkin"></label>
         <label>Çıkış tarihi <input type="date" id="checkout"></label>
         <label>Misafir sayısı <select id="guests"><option value="1">1 Misafir</option><option value="2" selected>2 Misafir</option><option value="3">3 Misafir</option><option value="4">4 Misafir</option></select></label>
-        <button id="searchButton" class="button button-primary">Uygunluğu Gör <span aria-hidden="true">→</span></button>
+        <button id="searchButton" class="button button-primary">Odaları Gör <span aria-hidden="true">↗</span></button>
       </div>
       <p id="searchResult" class="search-result" aria-live="polite"></p>
     </section>
 
-    <section class="rooms" aria-labelledby="rooms-title">
-      <div class="section-heading"><div><p class="eyebrow">02 / KEŞFET</p><h2 id="rooms-title">Örnek odalar</h2></div><p class="section-note">Odalar ve fiyatlar yalnızca demo içindir.</p></div>
+    <section class="island-story" id="ada" aria-labelledby="island-title">
+      <div class="story-index"><span>01 / ADA RUHU</span><span class="story-line" aria-hidden="true"></span></div>
+      <div class="story-copy"><p class="eyebrow">YAVAŞLAMAK İÇİN BİR NEDEN</p><h2 id="island-title">Biraz deniz, biraz bağ,<br><em>bolca ada zamanı.</em></h2><p>Sabah serin bir koyda yüz; öğleden sonra taş sokaklarda kaybol. Gün batımında ise bağların arasından esen rüzgârı dinle. Hızlı Otel, Bozcaada'nın bu sakin ritminden ilham alan kurgusal bir deneyim.</p></div>
+      <div class="story-notes" aria-label="Ada ilhamları"><span>01 <strong>Doğal koylar</strong></span><span>02 <strong>Bağ yolları</strong></span><span>03 <strong>Taş sokaklar</strong></span></div>
+    </section>
+
+    <section class="rooms" id="odalar" aria-labelledby="rooms-title">
+      <div class="section-heading room-heading"><div><p class="eyebrow">02 / ODALAR</p><h2 id="rooms-title">Ada gibi, her biri başka.</h2></div><p class="section-note">Fiyatlar ve odalar eğitim demosu içindir; USD cinsindendir.</p></div>
       <div class="room-grid">
-        <article class="room-card" data-room="Deluxe King" data-price="220">
-          <div class="room-visual room-visual-one" aria-hidden="true"><span>01</span></div>
-          <div class="room-content"><p class="room-kicker">ŞEHİR MOLASI</p><h3>Deluxe King</h3><p>King yatak · Şehir manzarası</p>
+        <article class="room-card" data-room="Taş Oda" data-price="220">
+          <div class="room-visual"><img src="assets/stone-room.jpg" alt="Taş dokulu odada mavi panjurlar ve ada sokağı" loading="lazy"><span>01 / TAŞ</span></div>
+          <div class="room-content"><p class="room-kicker">SOKAKLARIN ARASINDA</p><h3>Taş Oda</h3><p>Queen yatak · Taş sokak atmosferi</p>
             <div class="room-bottom"><p><strong>$220</strong> / gece</p><div class="room-actions"><button class="view-room button button-text">Odayı İncele</button><button class="book-room button button-secondary">Seç</button></div></div>
           </div>
         </article>
-        <article class="room-card" data-room="Skyline Suite" data-price="350">
-          <div class="room-visual room-visual-two" aria-hidden="true"><span>02</span></div>
-          <div class="room-content"><p class="room-kicker">GENİŞ ALAN</p><h3>Skyline Suite</h3><p>King yatak · Şehir silüeti</p>
+        <article class="room-card" data-room="Bağ Evi Süit" data-price="350">
+          <div class="room-visual"><img src="assets/vineyard-suite.jpg" alt="Üzüm asmalı terasa açılan taş duvarlı süit" loading="lazy"><span>02 / BAĞ</span></div>
+          <div class="room-content"><p class="room-kicker">BAĞLARIN KIYISINDA</p><h3>Bağ Evi Süit</h3><p>King yatak · Bağ manzaralı teras</p>
             <div class="room-bottom"><p><strong>$350</strong> / gece</p><div class="room-actions"><button class="view-room button button-text">Odayı İncele</button><button class="book-room button button-secondary">Seç</button></div></div>
           </div>
         </article>
-        <article class="room-card" data-room="Standard Queen" data-price="160">
-          <div class="room-visual room-visual-three" aria-hidden="true"><span>03</span></div>
-          <div class="room-content"><p class="room-kicker">SADE KONFOR</p><h3>Standard Queen</h3><p>Queen yatak · Bahçe manzarası</p>
+        <article class="room-card" data-room="Koy Odası" data-price="160">
+          <div class="room-visual"><img src="assets/cove-room.jpg" alt="Açık renkli odanın penceresinden görünen sakin koy" loading="lazy"><span>03 / DENİZ</span></div>
+          <div class="room-content"><p class="room-kicker">DENİZE YAKIN</p><h3>Koy Odası</h3><p>Queen yatak · Koy manzarası</p>
             <div class="room-bottom"><p><strong>$160</strong> / gece</p><div class="room-actions"><button class="view-room button button-text">Odayı İncele</button><button class="book-room button button-secondary">Seç</button></div></div>
           </div>
         </article>
@@ -68,18 +78,18 @@
     </section>
 
     <section id="checkoutSection" class="journey-panel hidden" aria-labelledby="checkout-title">
-      <p class="eyebrow">03 / DENE</p><h2 id="checkout-title">Demo ödeme adımı</h2>
+      <p class="eyebrow">03 / REZERVASYON DENEMESİ</p><h2 id="checkout-title">Ada günlerin hazır.</h2>
       <p id="checkoutSummary"></p>
       <p class="panel-note">Bu bir eğitim çalışmasıdır. Ödeme alınmaz, gerçek rezervasyon oluşturulmaz.</p>
       <button id="purchaseButton" class="button button-primary">Rezervasyonu Simüle Et <span aria-hidden="true">→</span></button>
     </section>
     <section id="confirmationSection" class="journey-panel confirmation hidden" aria-labelledby="confirmation-title">
-      <p class="eyebrow">04 / TAMAMLANDI</p><h2 id="confirmation-title">Demo tamamlandı</h2>
+      <p class="eyebrow">04 / TAMAMLANDI</p><h2 id="confirmation-title">Güzel bir ada provası.</h2>
       <p id="confirmationText" aria-live="polite"></p>
       <p class="panel-note">Gerçek rezervasyon yapılmadı.</p>
     </section>
   </main>
-  <footer>Hızlı Otel · Kurgusal bir Hotel Tracking Lab projesi</footer>
+  <footer><div><strong>Hızlı <em>Otel</em></strong><span>Bozcaada'dan ilham alan kurgusal butik otel.</span></div><p>Hotel Tracking Lab · Ölçümleme eğitimi için hazırlanmıştır. Gerçek rezervasyon yapılmaz.</p><a href="#top">Başa dön ↑</a></footer>
   <script src="app.js?v=2"></script>
 </body>
 </html>
