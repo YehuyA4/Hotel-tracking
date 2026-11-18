@@ -10,6 +10,36 @@ let bookingState = {
   totalValue: 0
 };
 
+const searchResult = document.getElementById("searchResult");
+const checkoutSection = document.getElementById("checkoutSection");
+const confirmationSection = document.getElementById("confirmationSection");
+const purchaseButton = document.getElementById("purchaseButton");
+
+function moveTo(element) {
+  const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ? "auto" : "smooth";
+  element.scrollIntoView({ behavior, block: "start" });
+}
+
+function showSearchMessage(message, isError = false) {
+  searchResult.textContent = message;
+  searchResult.classList.toggle("is-error", isError);
+}
+
+function resetBooking() {
+  bookingState.nights = 0;
+  bookingState.roomType = null;
+  checkoutSection.classList.add("hidden");
+  confirmationSection.classList.add("hidden");
+  purchaseButton.disabled = false;
+  purchaseButton.innerHTML = 'Rezervasyonu Simüle Et <span aria-hidden="true">↗</span>';
+  showSearchMessage("");
+}
+
+["checkin", "checkout", "guests"].forEach(id => {
+  document.getElementById(id).addEventListener("change", resetBooking);
+});
+
 
 function pushEvent(eventName, parameters = {}) {
 
@@ -55,7 +85,8 @@ document
 
 
     if (!startDate || !endDate) {
-      alert("Lütfen giriş ve çıkış tarihlerini seçin.");
+      showSearchMessage("Devam etmek için giriş ve çıkış tarihlerini seçin.", true);
+      document.getElementById(!startDate ? "checkin" : "checkout").focus();
       return;
     }
 
@@ -65,10 +96,12 @@ document
 
 
     if (nights <= 0) {
-      alert("Çıkış tarihi giriş tarihinden sonra olmalı.");
+      showSearchMessage("Çıkış tarihi giriş tarihinden sonra olmalı.", true);
+      document.getElementById("checkout").focus();
       return;
     }
 
+    resetBooking();
 
     bookingState.startDate = startDate;
     bookingState.endDate = endDate;
@@ -87,10 +120,8 @@ document
     );
 
 
-    document.getElementById(
-      "searchResult"
-    ).textContent =
-      `${guests} misafir için ${nights} gecelik örnek konaklama`;
+    showSearchMessage(`${guests} misafir için ${nights} gecelik örnek konaklama`);
+    moveTo(document.getElementById("odalar"));
   });
 
 
@@ -109,6 +140,14 @@ document
 
       const price =
         Number(roomCard.dataset.price);
+
+      const details = roomCard.querySelector(".room-details");
+      const isOpening = details.classList.contains("hidden");
+      details.classList.toggle("hidden", !isOpening);
+      button.setAttribute("aria-expanded", String(isOpening));
+      button.textContent = isOpening ? "Detayı Kapat" : "Odayı İncele";
+
+      if (!isOpening) return;
 
 
       pushEvent(
@@ -133,7 +172,8 @@ document
     button.addEventListener("click", event => {
 
       if (!bookingState.nights) {
-        alert("Önce tarih seçip uygunluk araması yapın.");
+        showSearchMessage("Oda seçmeden önce tarihleri girip Odaları Gör'e basın.", true);
+        moveTo(document.getElementById("rezervasyon"));
         return;
       }
 
@@ -176,9 +216,11 @@ document
         `${roomType} · ${bookingState.nights} gece · $${total}`;
 
 
-      document
-        .getElementById("checkoutSection")
-        .classList.remove("hidden");
+      confirmationSection.classList.add("hidden");
+      purchaseButton.disabled = false;
+      purchaseButton.innerHTML = 'Rezervasyonu Simüle Et <span aria-hidden="true">↗</span>';
+      checkoutSection.classList.remove("hidden");
+      moveTo(checkoutSection);
 
     });
 
@@ -240,8 +282,9 @@ document
       `Demo akışı ${transactionId} tamamlandı. Gerçek rezervasyon oluşturulmadı.`;
 
 
-    document
-      .getElementById("confirmationSection")
-      .classList.remove("hidden");
+    confirmationSection.classList.remove("hidden");
+    purchaseButton.disabled = true;
+    purchaseButton.textContent = "Demo tamamlandı";
+    moveTo(confirmationSection);
 
   });
